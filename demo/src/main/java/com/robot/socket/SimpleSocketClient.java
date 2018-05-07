@@ -26,19 +26,19 @@ public class SimpleSocketClient {
 	}
 
 	public SimpleSocketClient() {
-		String testServerName = "10.5.31.130";
+		String testServerName = "10.5.31.131";
 		int port = 1888;
 		String result;
-		String from = "f28caa64293a4d02bf9374c72eac90f9";
-		String to = "9513750";
-		String gid = "9513750";
+		String from = "watcher_1efdd64b4b6f4f8fa5503d6ed612ab17";
+		String to = "6698785";
+		String gid = "6698785";
 		String name = "123";
 		String license = "smkOMuOgtpbk8VAkDyUsIethocl8kWI62HblqZXCrhfWmc%2BTEhrDogpPPaxflZvV";
 		String cipher = SecurityUtil.socketMap65Encrypt("codyy", "codyy");
 
 		try {
 			Socket socket = openSocket(testServerName, port);
-
+			socket.setSoTimeout(1);
 			// login
 			String instruct = loginInstruct(from, to, gid, name, license, cipher);
 			result = writeToAndReadFromSocket(socket, instruct);

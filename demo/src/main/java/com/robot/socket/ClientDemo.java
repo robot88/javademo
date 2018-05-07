@@ -9,7 +9,7 @@ import java.net.Socket;
  * @author robot
  */
 public class ClientDemo {
-	public static final String IP_ADDR = "10.5.31.130";
+	public static final String IP_ADDR = "10.5.31.133";
 	public static final int PORT = 1888;
 
 	public static void main(String[] args) {
@@ -19,6 +19,7 @@ public class ClientDemo {
 			try {
 				// 创建一个流套接字并将其连接到指定主机上的指定端口号
 				socket = new Socket(IP_ADDR, PORT);
+//				socket.setSoTimeout(1000);
 
 				// 读取服务器端数据
 				DataInputStream input = new DataInputStream(socket.getInputStream());
